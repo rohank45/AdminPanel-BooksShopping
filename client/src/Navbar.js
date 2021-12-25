@@ -13,7 +13,9 @@ const Navbar = () => {
       localStorage.removeItem("admin");
 
       history.push("/");
-      toast.success("Logout Success!", {
+      window.location.reload(false);
+
+      return toast.success("Logout Success!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 3000,
       });

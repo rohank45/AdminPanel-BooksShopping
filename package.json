@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assert": "^2.0.0",
     "bcrypt": "^5.0.1",
+    "bson-objectid": "^2.0.1",
     "concurrently": "^6.5.1",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",

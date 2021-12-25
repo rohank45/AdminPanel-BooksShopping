@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/user/orders" exact component={OrderDetails} />
         <Route path="/books" exact component={Books} />
         <Route path="/payments" exact component={Payments} />
-        {/* <Route path="*" component={ErrorPage} /> */}
+        <Route path="*" component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   );

@@ -28,7 +28,7 @@ const UsersData = () => {
         id: id.id,
       });
 
-      setUserDetails(fetchingUserDetails.data.myOrders);
+      setUserDetails(fetchingUserDetails.data);
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +47,7 @@ const UsersData = () => {
             onClick={() => {
               sendId({ id: val._id });
             }}
-            className="flex flex-wrap justify-center items-center gap-5 p-4 border rounded-lg lowercase font-semibold"
+            className="flex flex-wrap justify-center items-center gap-5 p-4 border rounded-lg lowercase font-semibold cursor-pointer"
           >
             <img src={val.photo} alt="user" />
 

@@ -23,7 +23,9 @@ const Login = () => {
       localStorage.setItem("admin", "true");
       history.push("/");
 
-      return toast.success("Admin Login Success!", {
+      window.location.reload(false);
+
+      return toast.success("Login Success!", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 3000,
       });
