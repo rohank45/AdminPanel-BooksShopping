@@ -47,8 +47,10 @@ router.post("/update/order/data", isUserLogin, isAdmin, async (req, res) => {
     // console.log(id);  //getting 61c5abac0121e2b816cacd2d
     // console.log(ObjectId(id)); //getting 61c5abac0121e2b816cacd2d
     // console.log("is id valid", mongoose.Types.ObjectId.isValid(id));  //getting true
-    // const order = await User.findById(id);
-    // console.log("order object", order); //but here getting null
+
+    // const order = await User.findOne({ _id: id }); // null
+    const order = await User.findOne({ id }); // user data
+    console.log("order object", order);
 
     // const order = await User.findOne({ id: ObjectId(id) }); //getting user data
     // console.log(order.orderStatus); //but here getting null

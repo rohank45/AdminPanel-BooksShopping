@@ -17,7 +17,7 @@ const OrderDetails = () => {
 
   return (
     <div className="mt-40 pc:container mx-auto flex flex-wrap gap-10 pb-20 font-nunito">
-      {userDetails.map((curElem, id) => {
+      {userDetails?.map((curElem, id) => {
         return (
           <div
             key={id}
@@ -25,26 +25,26 @@ const OrderDetails = () => {
           >
             <img
               className="object-cover w-full h-48 mt-1"
-              src={curElem.book_image}
+              src={curElem?.book_image}
               alt="books"
             />
 
             <div className="px-4 py-2">
               <div className="bg-gray-50">
                 <h1 className="text-3xl font-bold text-gray-800 uppercase">
-                  {curElem.title}
+                  {curElem?.title}
                 </h1>
                 <h1 className="text-lg font-bold py-2">
-                  Author: {curElem.author}
+                  Author: {curElem?.author}
                 </h1>
-                <h1 className="text-lg font-bold py-2">${curElem.price}</h1>
+                <h1 className="text-lg font-bold py-2">${curElem?.price}</h1>
 
                 <button
                   onClick={async () => {
                     try {
                       await axios.post("/update/order/data", {
                         email: user.email,
-                        id: curElem._id,
+                        id: curElem?._id,
                         paymentToken: paymentState,
                         orderStatus: orderStatusState,
                       });
@@ -63,10 +63,10 @@ const OrderDetails = () => {
                 onChange={(e) => setPaymentState(e.target.value)}
                 className="py-1 px-1 w-full bg-indigo-100 text-black rounded-lg border border-gray-400 font-medium my-4"
               >
-                <option value={curElem.paymentToken}>
-                  {curElem.paymentToken}
+                <option value={curElem?.paymentToken}>
+                  {curElem?.paymentToken}
                 </option>
-                {curElem.paymentToken === "cod" ? (
+                {curElem?.paymentToken === "cod" ? (
                   <option value="DONE">DONE</option>
                 ) : (
                   ""
@@ -78,10 +78,10 @@ const OrderDetails = () => {
                 onChange={(e) => setOrderStatusState(e.target.value)}
                 className="py-1 px-1 w-full bg-indigo-100 text-black rounded-lg border border-gray-400 font-medium mb-2"
               >
-                <option value={curElem.orderStatus}>
-                  {curElem.orderStatus}
+                <option value={curElem?.orderStatus}>
+                  {curElem?.orderStatus}
                 </option>
-                {curElem.orderStatus === "delivered" ? (
+                {curElem?.orderStatus === "delivered" ? (
                   ""
                 ) : (
                   <option value="delivered">delivered</option>

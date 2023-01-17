@@ -47,7 +47,7 @@ const Books = () => {
 
               <div>
                 <p className="text-xl py-1 text-center mx-5 mb-4 bg-red-600 text-white rounded-lg">
-                  books stock remaining: {Math.floor(Math.random() * 1000)}/-
+                  remaining books are {Math.floor(Math.random() * 1000)}.
                 </p>
               </div>
             </div>
